@@ -5,5 +5,7 @@ public class MaxValue {
 
     //메소드로 구현
     //접근제한자 리턴타입 메소드명 (매개변수들..){구현..}
-
+    public int Max(int a, int b , int c){
+        return 0;
+    }
 }
