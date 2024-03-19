@@ -5,7 +5,7 @@ public class MaxValue {
 
     //메소드로 구현
     //접근제한자 리턴타입 메소드명 (매개변수들..){구현..}
-    public  int max(int a, int b, int c){
+    public static int max(int a, int b, int c){
         if(a>b){
             if(a>c){
                 return a;
@@ -21,7 +21,6 @@ public class MaxValue {
     }
 
     public static void main(String[] args) {
-        MaxValue max = new MaxValue();
-        System.out.println(max.max(1,2,3));
+        System.out.println(MaxValue.max(1,2,3));
     }
 }

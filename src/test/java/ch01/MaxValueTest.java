@@ -7,6 +7,8 @@ public class MaxValueTest {
 
     @Test
     void max(){
+        int a =MaxValue.max(1,2,3);
+        assertEquals(3,a);
     }
 
 
