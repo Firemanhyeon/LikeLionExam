@@ -16,6 +16,7 @@ public class MaxValue {
             return b;
         }else{
             return c;
+
         }
     }
 }
