@@ -1,12 +1,16 @@
 package ch02;
 
+import java.util.Arrays;
+
 public class Test {
     public static void main(String[] args) {
-        int[] num = {1,2,3,4,5};
-        for(int i=0; i<num.length/2;i++){
-            int temp = num[i];
-            num[i] = num[num.length-i-1];
-            num[num.length-i-1] = temp;
+        String[] strlist = {"We", "are", "the", "World!"};
+        int[] answer=new int [strlist.length];
+        for(int i=0;i<strlist.length;i++){
+             answer[i] = strlist[i].length();
         }
+
+        System.out.println(Arrays.toString(answer));
     }
 }
+
