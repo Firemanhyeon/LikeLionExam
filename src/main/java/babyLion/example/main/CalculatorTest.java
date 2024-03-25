@@ -1,6 +1,6 @@
-package com.example.main;
+package babyLion.example.main;
 
-import com.example.util.Calculator;
+import babyLion.example.util.Calculator;
 
 public class CalculatorTest {
     public static void main(String[] args) {
