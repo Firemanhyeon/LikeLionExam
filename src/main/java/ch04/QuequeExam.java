@@ -70,12 +70,10 @@ public class QuequeExam {
         quequeExam.enqueue(5);
         System.out.println(quequeExam.dequeue());
         System.out.println(quequeExam.dequeue());
-        System.out.println(quequeExam.dequeue());
-        System.out.println(quequeExam.dequeue());
-        System.out.println(quequeExam.peek());
-        System.out.println(quequeExam.dequeue());
-        quequeExam.enqueue(6);
-        System.out.println(quequeExam.dequeue());
+        quequeExam.enqueue(4);
+        quequeExam.enqueue(5);
+        quequeExam.enqueue(5);
+
 
     }
 }
