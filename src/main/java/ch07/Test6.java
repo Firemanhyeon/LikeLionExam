@@ -23,14 +23,15 @@ class 비둘기 extends 새{
 }
 public class Test6 {
     public static void main(String[] args) {
-        새 bird = null;
-        if(args[0].equals("앵무새")){
-            bird = new 앵무새();
-        }else if(args[0].equals("참새")){
-            bird = new 참새();
-        }else if(args[0].equals("비둘기")){
-            bird = new 비둘기();
-        }
-        bird.say();
+        새 bird1 = new 새();
+        새 bird2 = new 앵무새();
+        새 bird3 = new 참새();
+        새 bird4 = new 비둘기();
+
+        bird1.say();
+        bird2.say();
+        bird3.say();
+        bird4.say();
+
     }
 }
