@@ -141,65 +141,70 @@
       <li>Organize office</li>
     </ul>
     <script>
-      let liTagAll = document.querySelectorAll("li");
-
-      addCloseBtn();
       let ulTag = document.querySelector("ul");
-
-      //add버튼클릭 li요소생성 , 빈값확인
+      createXBtn();
+      //add버튼 클릭
       function newElement() {
-        console.log("add버튼 클릭");
-        let inputBtn = document.getElementById("myInput");
-
+        let inputBtn = document.getElementById("myInput").value;
         let liTag = document.createElement("li");
-        let text = document.createTextNode(inputBtn.value);
-
-        if (inputBtn.value.length > 0) {
+        let text = document.createTextNode(inputBtn);
+        if (inputBtn != "") {
           liTag.appendChild(text);
           ulTag.appendChild(liTag);
-          addCloseBtn();
+          //마지막요소 x표시만들기
+          let spanTag = document.createElement("SPAN");
+          let xTag = document.createTextNode("\u00D7");
+          spanTag.className = "close";
+          spanTag.appendChild(xTag);
+          liTag.appendChild(spanTag);
+
+          //x클릭 이벤트
+          let clickXBtn = spanTag;
+          clickXBtn.addEventListener("click", function (el) {
+            console.log(el);
+            let spanTarget = el.target;
+            let liTarget = spanTarget.parentNode;
+            liTarget.style.display = "none";
+          });
         } else {
-          alert("빈값입니다");
+          alert("값을 입력해주세요");
           return;
         }
-        inputBtn.value = "";
-        let closeBtn = document.querySelectorAll(".close");
-        console.log("close버튼클릭");
-
-        for (let i = 0; i < closeBtn.length; i++) {
-          closeBtn[i].addEventListener("click", (el) => {
-            console.log(closeBtn);
-            console.log(123);
-            let liTag = el.target.parentElement;
-            liTag.style.display = "none";
-          });
-        }
       }
-
-      //close버튼생성
-      function addCloseBtn() {
-        console.log("close버튼 생성");
-        liTagAll = document.querySelectorAll("li");
-        for (let i = 0; i < liTagAll.length; i++) {
+      //x표시 생성
+      function createXBtn() {
+        let liTags = document.querySelectorAll("li");
+        for (let i = 0; i < liTags.length; i++) {
           let spanTag = document.createElement("SPAN");
-          let txt = document.createTextNode("\u00D7");
+          let xTag = document.createTextNode("\u00D7");
           spanTag.className = "close";
-          spanTag.appendChild(txt);
-          liTagAll[i].appendChild(spanTag);
+          spanTag.appendChild(xTag);
+          liTags[i].appendChild(spanTag);
         }
       }
 
-      //li요소 선택시 체크
-      ulTag.addEventListener("click", function (el) {
-        console.log("li요소클릭");
-        if (el.target.className == "checked") {
-          el.target.className = "";
+      //x버튼 클릭
+      let clickXBtn = document.getElementsByClassName("close");
+      for (let i = 0; i < clickXBtn.length; i++) {
+        clickXBtn[i].addEventListener("click", function (el) {
+          let spanTarget = el.target;
+          let liTarget = spanTarget.parentNode;
+          liTarget.style.display = "none";
+        });
+      }
+
+      //li요소 클릭
+
+      let liTags = document.querySelector("ul");
+      liTags.addEventListener("click", (el) => {
+        console.log(el.target);
+        let liTarget = el.target;
+        if (liTarget.className == "checked") {
+          liTarget.className = "";
         } else {
-          el.target.className = "checked";
+          liTarget.className = "checked";
         }
       });
-
-      //close버튼 클릭 시 li요소 제거
     </script>
   </body>
 </html>
