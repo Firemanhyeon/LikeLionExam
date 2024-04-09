@@ -1,2 +1,5 @@
-package ch08;public interface Cinter {
+package ch08;
+
+public interface Cinter {
+    public void cMethod();
 }
