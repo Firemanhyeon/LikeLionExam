@@ -6,7 +6,6 @@ public class AnimalDemo {
         Animal ani1 = new Cat();
         ani.speak();
         ani1.speak();
-        ani1.punch();
-        ani.punch();
+
     }
 }
