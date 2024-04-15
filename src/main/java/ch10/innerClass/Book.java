@@ -23,7 +23,7 @@ public class Book {
     }
 
     // 멤버 내부 클래스 'Author'
-    public class Author {
+    public static class Author {
         private String name;
 
         public void setName(String name) {
