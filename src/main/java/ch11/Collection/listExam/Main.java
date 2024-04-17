@@ -1,4 +1,4 @@
-package ch11.Collection.exam;
+package ch11.Collection.listExam;
 
 import java.util.*;
 

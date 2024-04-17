@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class    Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        BookManager manager = new BookManager();
+        manager.addBook(new Book("모두의 자바", "강경미", 2015));
+        manager.addBook(new Book("이거이 자바다", "신용권", 2018));
+        manager.addBook(new Book("자바의 정석", "남궁성", 2013)); // 중복 추가 시도
 
-        int a = sc.nextInt();
-
-        List<String> list = new ArrayList<>();
+        manager.displayBooks();
+        manager.sortBooksByYear();
     }
 }
