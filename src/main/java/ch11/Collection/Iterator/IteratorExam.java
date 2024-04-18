@@ -16,6 +16,7 @@ public class IteratorExam {
         while(iterator.hasNext()){
             System.out.println(iterator.next());
         }
+
         System.out.println("=========================");
         Set<String> set = new HashSet<>();
         set.add("a");
@@ -27,6 +28,7 @@ public class IteratorExam {
         for(String s : set){
             System.out.println(s);
         }
+
     }
 
 }
