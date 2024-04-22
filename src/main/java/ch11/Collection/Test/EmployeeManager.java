@@ -8,13 +8,14 @@ public class EmployeeManager {
 
 
     public void addEmployee(Employee employee) {
-        if(employees.contains(employee)) {
-            System.out.println("이미 등록된 사원입니다");
-        }else{
-            employees.add(employee);
-            System.out.println("등록완료되었습니다."+employee.toString());
-
+        for(Employee e: employees) {
+            if(e.getId().equals(employee.getId())) {
+                System.out.println("이미 등록된 사원입니다");
+                return;
+            }
         }
+        employees.add(employee);
+        System.out.println("등록완료");
     }
     public void removeEmployee(Employee employee) {
         if(employees.contains(employee)) {

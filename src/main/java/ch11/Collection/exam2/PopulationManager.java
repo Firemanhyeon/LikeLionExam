@@ -1,9 +1,6 @@
 package ch11.Collection.exam2;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class PopulationManager {
 
@@ -22,7 +19,13 @@ public class PopulationManager {
         }
     }
     public void displayAll(){
-        System.out.println(map);
+        Set<String> set = map.keySet();
+        Iterator<String> iterator = set.iterator();
+        while(iterator.hasNext()){
+            String str = iterator.next();
+            System.out.print(str +": "+ map.get(str));
+            System.out.println();
+        }
     }
     //알맞게 구현해 주세요.
 
