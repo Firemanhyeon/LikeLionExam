@@ -14,7 +14,7 @@ public class ChatClient {
             System.exit(1);
         }
         try(
-                Socket socket = new Socket("localhost" , 9999);
+                Socket socket = new Socket("14.38.151.15" , 12345);
                 PrintWriter out = new PrintWriter(socket.getOutputStream(),true);
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 BufferedReader keyboard= new BufferedReader(new InputStreamReader(System.in));
