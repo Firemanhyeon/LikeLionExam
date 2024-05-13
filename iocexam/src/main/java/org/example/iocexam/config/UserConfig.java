@@ -19,9 +19,10 @@ public class UserConfig {
     }
 
     @Bean
-    public UserService userService(UserDao userDao) {
+    public UserService userService(UserDao userDao) {//userService가 생성될떄 userDao가 필요하기 때문에 넣어준다.
         return new UserServiceImpl(userDao);
     }
+
 
     @Bean
     public UserController userController(UserService userService) {

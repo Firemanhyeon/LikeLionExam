@@ -2,14 +2,19 @@ package org.example.iocexam.service;
 
 import org.example.iocexam.dao.UserDao;
 import org.example.iocexam.domain.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class UserServiceImpl1 implements UserService{
+
     private UserDao userDao;
 
-
-    public UserServiceImpl1(UserDao userDao) {
+    @Autowired
+    @Qualifier("userDaoImpl1")
+    public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
     }
 

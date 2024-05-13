@@ -10,15 +10,15 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class UserRun {
     public static void main(String[] args) {
 
-//        ApplicationContext context = new AnnotationConfigApplicationContext(UserConfig.class);
-//
-//        UserController userController = (UserController) context.getBean(UserController.class);
-//        userController.joinUser();
+        ApplicationContext context = new AnnotationConfigApplicationContext(UserConfig.class);
 
-
-        ApplicationContext context = new AnnotationConfigApplicationContext(UserConfig1.class);
-        UserController1 userController = (UserController1) context.getBean(UserController1.class);
-
+        UserController userController = (UserController) context.getBean(UserController.class);
         userController.joinUser();
+
+
+//        ApplicationContext context = new AnnotationConfigApplicationContext(UserConfig1.class);
+//        UserController1 userController = (UserController1) context.getBean(UserController1.class);
+//
+//        userController.joinUser();
     }
 }
