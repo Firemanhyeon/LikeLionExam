@@ -13,10 +13,8 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class UserDao {
     private final JdbcTemplate jdbcTemplate;
-
     //입력이 되면 자동으로 생성된 pk값을 리턴받아야한다.
     //SimpleJdbcInsert
-
     private SimpleJdbcInsert simpleJdbcInsert;
 
     @PostConstruct

@@ -20,8 +20,5 @@ public class UserDaoImpl implements UserDao{
         }catch (Exception e){
             jdbcTemplate.update("UPDATE users SET email = ? WHERE name = ?", newEmail, name); // update문이 실행이 되지 않았으므로 insert도 Rollback되고있음.
         }
-
-
-
     }
 }

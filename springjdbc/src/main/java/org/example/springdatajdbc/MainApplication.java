@@ -23,43 +23,45 @@ public class MainApplication {
     @Bean
     CommandLineRunner demo(UserRepository  userRepository) {
         return args -> {
-            //userRepository.save(new User("ffff", "asdf@123"));
+//            userRepository.save(new User("ccz", "asdf@123"));
 //            List<User> list = (List<User>) userRepository.findAll();
 //            list.forEach(System.out::println);
 //
 //            User user = userRepository.findById(25L).get();
 //            System.out.println(user.getName());
-//
-//            User user1 = userRepository.findByName("john");
-//            System.out.println(user1.getName());
+
+            User user1 = userRepository.findByName("john");
+            System.out.println(user1.getName());
+            System.out.println(user1.getId());
+            System.out.println(user1.getEmail());
 //            PageRequest pageRequest = PageRequest.of(1, 5);
 //            Page<User> allUsersWithPagination = userRepository.findAllUsersWithPagination(pageRequest);
-//            allUsersWithPagination.forEach(user -> System.out.println("name: "+user.getName()+" "+"email: "+user.getEmail()));
+//            allUsersWithPagination.forEach(usera -> System.out.println("name: "+usera.getName()+" "+"email: "+usera.getEmail()));
         };
     }
 
-    @Bean
-    public CommandLineRunner batchUpdateDemo(JdbcTemplate jdbcTemplate){
-        return args -> {
-            List<User> users = Arrays.asList(
-                    new User(null, "Alice", "alice@example.com"),
-                    new User(null, "Bob", "bob@example.com"),
-                    new User(null, "Charlie", "charlie@example.com"),
-                    new User(null, "David", "david@example.com")
-            );
-
-            String sql = "INSERT INTO users (name, email) VALUES (?, ?)";
-
-            int[] updateCounts = jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
-                public void setValues(PreparedStatement ps, int i) throws  SQLException {
-                    User user = users.get(i);
-                    ps.setString(1,user.getName());
-                    ps.setString(2,user.getEmail());
-                }
-                public int getBatchSize() {
-                    return users.size();
-                }
-            });
-        };
-    }
+//    @Bean
+//    public CommandLineRunner batchUpdateDemo(JdbcTemplate jdbcTemplate){
+//        return args -> {
+//            List<User> users = Arrays.asList(
+//                    new User(null, "Alice", "alice@example.com"),
+//                    new User(null, "Bob", "bob@example.com"),
+//                    new User(null, "Charlie", "charlie@example.com"),
+//                    new User(null, "David", "david@example.com")
+//            );
+//
+//            String sql = "INSERT INTO users (name, email) VALUES (?, ?)";
+//
+//            int[] updateCounts = jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
+//                public void setValues(PreparedStatement ps, int i) throws  SQLException {
+//                    User user = users.get(i);
+//                    ps.setString(1,user.getName());
+//                    ps.setString(2,user.getEmail());
+//                }
+//                public int getBatchSize() {
+//                    return users.size();
+//                }
+//            });
+//        };
+//    }
 }
