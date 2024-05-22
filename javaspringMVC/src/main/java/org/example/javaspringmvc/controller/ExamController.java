@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.sql.Array;
+import java.time.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -53,5 +54,24 @@ public class ExamController {
                                         new User("사용자3" , false));
         model.addAttribute("userList",users);
         return "welcome/userList";
+    }
+    @GetMapping("/list")
+    public String showList(Model model){
+        List<String> list = Arrays.asList("Item1" ,"Item2" ,"Item3" ,"Item4" ,"Item5" ,"Item6" ,"Item7" ,"Item8" ,"Item9" ,"Item10");
+        model.addAttribute("list" , list);
+        return "welcome/list";
+    }
+
+    @GetMapping("/dateTime")
+    public String showDateTime(Model model){
+        LocalDate date = LocalDate.now();
+        LocalDateTime dateTime = LocalDateTime.now();
+        LocalTime time = LocalTime.now();
+        ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of("Asia/Seoul"));
+        model.addAttribute("currentDate" , date);
+        model.addAttribute("currentDateTime" , dateTime);
+        model.addAttribute("currentTime" , time);
+        model.addAttribute("currentZonedDateTime" , zonedDateTime);
+        return "welcome/datetime";
     }
 }
