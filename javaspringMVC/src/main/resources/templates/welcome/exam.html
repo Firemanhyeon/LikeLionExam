@@ -25,5 +25,11 @@
 <!--메세지표현식-->
 <p th:text="#{welcome.message}"></p>
 <p th:text="#{product.name}"></p>
+
+<script>
+    let name = '[[${username}]]';
+    console.log(name);
+</script>
 </body>
+
 </html>
