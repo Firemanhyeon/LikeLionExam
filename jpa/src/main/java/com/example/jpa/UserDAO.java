@@ -17,12 +17,8 @@ public class UserDAO {
 //        }
 //    }
 
-    private final EntityManager entityManager;
-    public UserDAO(){
-        this.entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
-    }
-
     public void createUser(User user){
+        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
         try{
             entityManager.getTransaction().begin();
             entityManager.persist(user);
@@ -33,11 +29,37 @@ public class UserDAO {
     }
 
     public User findUser(Long id){
-       try{
-           return entityManager.find(User.class , id);
-       }finally {
-           //entityManager.close();
-       }
+        EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
+        try{
+            User user = em.find(User.class, id);
+            em.close();
+            return user;
+        }finally {
+            em.close();
+        }
+    }
 
+    public void updateUser(User user){
+        EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
+        try{
+            em.getTransaction().begin();
+
+            em.merge(user);
+
+            em.getTransaction().commit();
+        }finally {
+            em.close();
+        }
+    }
+    public void deleteUser(User user){
+        EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
+        try{
+            em.getTransaction().begin();
+            User managedUser = em.contains(user) ? user : em.merge(user);
+            em.remove(managedUser);
+            em.getTransaction().commit();
+        }finally {
+            em.close();
+        }
     }
 }

@@ -18,17 +18,29 @@ public class UserMain {
 //        log.info("Create user : "+ caramiUser.getName());
 //        log.info("user email : {}" , caramiUser.getEmail());
 
-        //select 예제 id로 찾아오기
-        log.info("findUserTest=============== " );
+//        //select 예제 id로 찾아오기
+//        log.info("findUserTest=============== " );
         UserDAO userDAO = new UserDAO();
-        User findUser = userDAO.findUser(1L);
-        log.info(findUser.getName());
+//        User findUser = userDAO.findUser(1L);
+//        log.info(findUser.getName());
+//
+//        User findUser2 = userDAO.findUser(1L);
+//        if(findUser == findUser2){
+//            log.info("findUser == findUser2");
+//        } else {
+//            log.info("findUser != findUser2");
+//        }
+//
+        //update
+//        User user = new User();
+//        user.setId(1L);
+//        user.setEmail("!@@@@");
+//        user.setName("수정");
+//        userDAO.updateUser(user);
 
-        User findUser2 = userDAO.findUser(1L);
-        if(findUser == findUser2){
-            log.info("findUser == findUser2");
-        } else {
-            log.info("findUser != findUser2");
-        }
+        //delete
+        User user = new User();
+        user.setId(2L);
+        userDAO.deleteUser(user);
     }
 }
