@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)//싱글테이블 전략을 사용하겠다.
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)//테이블당 구체클래스전략 사용하겠다
 @Table(name = "Vehicle3")
 @Getter@Setter
 public abstract class Vehicle3 {
