@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Transactional
-class UserRepositoryTest {
+class UserRepository1Test {
     @Autowired
     private UserRepository repository;
 
