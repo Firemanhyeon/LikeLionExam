@@ -37,7 +37,6 @@ public class TodoController {
 
     @PatchMapping
     public Todo updateTodo (@RequestBody Todo todo){
-
         return todoService.updateTodo(todo);
     }
 
