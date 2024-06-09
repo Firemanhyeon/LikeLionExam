@@ -1,6 +1,6 @@
 function fetchProducts() {
     fetch('/api/products')
-        .then(response => response.json() )
+        .then(response => console.log(response) )
         .then(data => {
             console.log(data);
             const list = document.getElementById('productList');

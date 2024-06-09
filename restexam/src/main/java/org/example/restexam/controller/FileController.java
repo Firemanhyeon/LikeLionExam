@@ -31,7 +31,7 @@ public class FileController {
 
     @PostMapping(value = "/upload" , consumes = "multipart/form-data")
     public ResponseEntity<String> handleFileUpload(
-            @RequestParam("file")MultipartFile file,
+            @RequestPart("file")MultipartFile file,
             @RequestPart("info")UploadInfo uploadInfo
     ){
         String message="";
