@@ -1,6 +1,7 @@
 package org.blog.filterexam4.controller;
 
 import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.blog.filterexam4.entity.User;
@@ -66,4 +67,20 @@ public class UserController {
         }
     }
     //info페이지
+    @GetMapping("/info")
+    public String info(HttpServletRequest request){
+//        User user = UserContext.getUser();
+//        if(user != null)
+        System.out.println("info로 이동");
+            return "info";
+//        else
+//            return "redirect:/loginform";
+    }
+    @GetMapping("/access-denied")
+    public String accessDenied(HttpServletRequest request){
+
+        return "access-denied";
+
+    }
+
 }
